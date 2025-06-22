@@ -1512,30 +1512,39 @@ section:not(:last-child)::after {
 
 
 
-/* ===== FIX ДЛЯ ТЕКСТА В БЛОКЕ ПРОГРАММИСТОВ ===== */
-.programmer-card {
-  column-count: 1 !important; /* Запрещаем разбиение на колонки */
-  page-break-inside: avoid; /* Запрещаем разрыв карточки */
-}
-
-.programmer-info p {
-  display: block;
-  width: 100%;
-  margin-bottom: 15px;
-  text-align: justify;
-  hyphens: auto; /* Автоматическое переносы слов */
-}
-
-.programmer-dates {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 10px;
-  clear: both; /* Отделяем даты от основного текста */
+/* 🔽 Адаптация шрифта для разных экранов */
+body {
+  font-size: 16px;
 }
 
 @media (max-width: 768px) {
-  .programmer-info {
+  body {
     font-size: 14px;
-    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+/* 🔽 Внутренние отступы для основного контейнера */
+.container, .wrapper, main, section {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (max-width: 768px) {
+  .container, .wrapper, main, section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container, .wrapper, main, section {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
