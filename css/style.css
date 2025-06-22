@@ -1511,28 +1511,33 @@ section:not(:last-child)::after {
 
 
 
-/* ===== АДАПТИВНЫЕ ПРАВКИ ===== */
-@media (max-width: 1200px) {
-  .main { padding: 0 50px; }
-  h1 { font-size: 36px; }
+/* ===== FIX ДЛЯ БЛОКА "ИЗВЕСТНЫЕ ПРОГРАММИСТЫ" ===== */
+.programmers-section .programmer-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  break-inside: avoid; /* Предотвращает разрыв карточек */
 }
 
-@media (max-width: 992px) {
-  .main { padding: 0 30px; }
-  h1 { font-size: 32px; }
+.programmers-section .programmer-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.programmers-section .programmer-info {
+  padding: 15px;
+  background: #2c3e50;
+  border-radius: 0 0 8px 8px;
 }
 
 @media (max-width: 768px) {
-  .main { padding: 0 20px; }
-  h1 { font-size: 28px; }
-  .menu { display: none; }
-  .burger-menu { display: block; }
+  .programmers-section {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .programmer-card {
+    margin-bottom: 20px;
+  }
 }
-
-@media (max-width: 576px) {
-  html { font-size: 14px; }
-  .main { padding: 0 15px; }
-  h1 { font-size: 24px; }
-}
-
-img { max-width: 100%; height: auto; }
