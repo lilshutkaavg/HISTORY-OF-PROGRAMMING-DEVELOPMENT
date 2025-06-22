@@ -1504,3 +1504,38 @@ section:not(:last-child)::after {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(210, 171, 103, 0.4);
 }
+
+
+
+
+
+
+
+
+/* ===== FIX ДЛЯ ТЕКСТА В БЛОКЕ ПРОГРАММИСТОВ ===== */
+.programmer-card {
+  column-count: 1 !important; /* Запрещаем разбиение на колонки */
+  page-break-inside: avoid; /* Запрещаем разрыв карточки */
+}
+
+.programmer-info p {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: justify;
+  hyphens: auto; /* Автоматическое переносы слов */
+}
+
+.programmer-dates {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  clear: both; /* Отделяем даты от основного текста */
+}
+
+@media (max-width: 768px) {
+  .programmer-info {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
