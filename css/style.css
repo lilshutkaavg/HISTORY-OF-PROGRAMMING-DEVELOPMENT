@@ -1511,49 +1511,28 @@ section:not(:last-child)::after {
 
 
 
-/* ===== АДАПТАЦИЯ ШРИФТОВ ===== */
-html {
-  font-size: 16px; /* Базовый размер для ПК */
+/* ===== АДАПТИВНЫЕ ПРАВКИ ===== */
+@media (max-width: 1200px) {
+  .main { padding: 0 50px; }
+  h1 { font-size: 36px; }
 }
 
-@media (max-width: 1024px) {
-  html { font-size: 15px; } /* Планшеты */
-}
-
-@media (max-width: 768px) {
-  html { font-size: 14px; } /* Большие смартфоны */
-}
-
-@media (max-width: 480px) {
-  html { font-size: 13px; } /* Маленькие телефоны */
-}
-
-/* ===== АДАПТАЦИЯ ОТСТУПОВ ===== */
-.container, 
-.content-wrapper,
-section, 
-.main-content {
-  padding-left: 5%;
-  padding-right: 5%; /* Универсальные отступы 5% от ширины экрана */
+@media (max-width: 992px) {
+  .main { padding: 0 30px; }
+  h1 { font-size: 32px; }
 }
 
 @media (max-width: 768px) {
-  .container, 
-  .content-wrapper,
-  section, 
-  .main-content {
-    padding-left: 20px;
-    padding-right: 20px; /* Фиксированные отступы для мобильных */
-  }
+  .main { padding: 0 20px; }
+  h1 { font-size: 28px; }
+  .menu { display: none; }
+  .burger-menu { display: block; }
 }
 
-@media (max-width: 480px) {
-  .container, 
-  .content-wrapper,
-  section, 
-  .main-content {
-    padding-left: 15px;
-    padding-right: 15px; /* Ещё меньше для tiny-экранов */
-  }
+@media (max-width: 576px) {
+  html { font-size: 14px; }
+  .main { padding: 0 15px; }
+  h1 { font-size: 24px; }
 }
 
+img { max-width: 100%; height: auto; }
